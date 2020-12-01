@@ -1,5 +1,5 @@
-resources: 
-- deployment-backend.yaml 
+resources:
+- deployment-backend.yaml
 - deployment-database.yaml
 - secret-mariadb.yaml
 - service-backend.yaml
@@ -7,6 +7,8 @@ resources:
 - namespace.yaml
 namespace: thesis-microservices-app-first-attempt
 images:
-  - name: backend
-    newName: mattedamo26/first-attempot-backend
-    newTag: latest
+- name: backend
+  newName: mattedamo26/first-attempt-backend
+  newTag: latest
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
