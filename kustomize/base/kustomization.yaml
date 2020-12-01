@@ -1,0 +1,8 @@
+resources: 
+- deployment-backend.yaml 
+- deployment-database.yaml
+- secret-mariadb.yaml
+- service-backend.yaml
+- service-database.yaml
+- namespace.yaml
+namespace: thesis-microservices-app-first-attempt

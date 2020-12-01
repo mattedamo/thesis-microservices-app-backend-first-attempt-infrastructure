@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: databse-deployment
+  name: database-deployment
+  namespace: thesis-microservices-app-first-attempt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database-pod
+  template:
+    metadata:
+      labels:
+        app: database-pod
+    spec:
+      containers:
+        - image: mariadb:latest
+          name: mariadb
+          ports:
+            - name: http
+              containerPort: 3306
+          envFrom:
+            - secretRef:
+                name: secret-mariadb
