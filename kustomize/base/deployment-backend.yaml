@@ -16,7 +16,7 @@ spec:
         app: backend-pod
     spec:
       containers:
-        - image: backend:latest 
+        - image: backend 
           name: backend
           imagePullPolicy: Always
           ports:
