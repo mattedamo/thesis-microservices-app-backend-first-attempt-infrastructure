@@ -21,7 +21,7 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
           cd kustomize/base
-          kustomize edit set image backend=$DOCKER_USERNAME/first-attempt-backend:${{ github.event.inputs.github_sha }}
+          kustomize edit set image backend=$DOCKER_USERNAME/first-attempt-backend:latest
           cat kustomization.yaml
        
       - name: Commit files
