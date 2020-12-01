@@ -1,0 +1,12 @@
+resources: 
+- deployment-backend.yaml 
+- deployment-database.yaml
+- secret-mariadb.yaml
+- service-backend.yaml
+- service-database.yaml
+- namespace.yaml
+namespace: thesis-microservices-app-first-attempt
+images:
+  - name: backend
+    newName: matteo26/backend
+    newTag: f5c72f1b43cc83a0330f3528693399831328dee0
