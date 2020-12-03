@@ -9,6 +9,6 @@ namespace: thesis-microservices-app-first-attempt
 images:
 - name: backend
   newName: mattedamo26/first-attempt-backend
-  newTag: latest
+  newTag: 90df674dad258c38aa7b10e7c44adfc9a3883e20
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
