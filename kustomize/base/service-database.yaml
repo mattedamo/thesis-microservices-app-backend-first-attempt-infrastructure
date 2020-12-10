@@ -9,7 +9,7 @@ spec:
   type: NodePort
   ports:
     - protocol: TCP
-      port: 3307
+      port: 3306
       targetPort: 3306
   selector:
     app: database-pod
