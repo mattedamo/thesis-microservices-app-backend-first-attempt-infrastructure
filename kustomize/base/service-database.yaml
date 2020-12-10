@@ -8,8 +8,6 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - protocol: TCP
-      port: 3307
-      targetPort: 3306
+    - containerPort: 3306
   selector:
     app: database-pod
