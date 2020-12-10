@@ -7,4 +7,10 @@ resources:
 - service-database.yaml
 - namespace.yaml
 namespace: thesis-microservices-app-first-attempt
-
+images:
+- name: backend
+  newName: mattedamo26/first-attempt-backend
+  newTag: 10696b70ea0229a929a58cb52322029b9895e89b
+- name: frontend
+  newName: mattedamo26/first-attempt-frontend
+  newTag: e3d82b4ab986fcee4fe1825e0c8d14b2c7b33041
