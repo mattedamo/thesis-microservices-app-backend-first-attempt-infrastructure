@@ -16,7 +16,7 @@ spec:
         app: backend-pod
     spec:
       containers:
-        - image: first-attempt-backend 
+        - image: mattedamo26/first-attempt-backend 
           name: backend
           imagePullPolicy: Always
           ports:

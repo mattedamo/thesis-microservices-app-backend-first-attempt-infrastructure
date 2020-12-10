@@ -1,7 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 resources:
 - deployment-backend.yaml
 - deployment-database.yaml
-- secret-mariadb.yaml
 - service-backend.yaml
 - service-database.yaml
 - namespace.yaml
@@ -13,5 +14,3 @@ images:
 - name: frontend
   newName: mattedamo26/first-attempt-frontend
   newTag: e3d82b4ab986fcee4fe1825e0c8d14b2c7b33041
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
