@@ -18,5 +18,5 @@ spec:
         - image: mariadb:latest
           name: mariadb
           ports:
-            - name: "3306"
+            - name: http
               containerPort: 3306
