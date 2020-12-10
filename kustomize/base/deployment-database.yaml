@@ -4,7 +4,6 @@ metadata:
   labels:
     app: databse-deployment
   name: database-deployment
-  namespace: thesis-microservices-app-first-attempt
 spec:
   replicas: 1
   selector:
@@ -21,6 +20,3 @@ spec:
           ports:
             - name: http
               containerPort: 3306
-          envFrom:
-            - secretRef:
-                name: secret-mariadb
