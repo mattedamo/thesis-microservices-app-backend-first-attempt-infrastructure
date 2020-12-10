@@ -8,15 +8,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: database-pod
+      app: mariadb
   template:
     metadata:
       labels:
-        app: database-pod
+        app: mariadb
     spec:
       containers:
         - image: mariadb:latest
           name: mariadb
           ports:
-            - name: http
+            - name: "3306"
               containerPort: 3306
