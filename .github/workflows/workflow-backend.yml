@@ -1,4 +1,4 @@
-name: Update-infrastructure
+name: Update-infrastructure-backend
 
 on: 
   workflow_dispatch:
