@@ -1,15 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata: 
-  name: database-service
-  namespace: thesis-microservices-app-first-attempt
+  name: mariadb
   labels:
-    app: database-service
+    app: mariadb
 spec:
-  type: NodePort
   ports:
-    - name: http
-      protocol: TCP
+    - protocol: TCP
       port: 3306
       targetPort: 3306
   selector:

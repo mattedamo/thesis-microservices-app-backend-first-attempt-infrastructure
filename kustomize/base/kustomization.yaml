@@ -5,6 +5,8 @@ resources:
 - deployment-database.yaml
 - service-backend.yaml
 - service-database.yaml
+- deployment-frontend.yaml
+- service-frontend.yaml
 namespace: thesis-microservices-app-first-attempt
 images:
 - name: backend
