@@ -6,8 +6,6 @@ resources:
 
 namespace: first-attempt-test
 
-patchesStrategicMerge:
-
 
 images:
 - name: backend

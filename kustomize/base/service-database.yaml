@@ -3,11 +3,13 @@ kind: Service
 metadata: 
   name: mariadb
   labels:
-    app: mariadb
+    app: thesis-appp
+    tier: db
 spec:
   ports:
     - protocol: TCP
       port: 3306
       targetPort: 3306
   selector:
-    app: mariadb
+    app: thesis-app
+    tier: db

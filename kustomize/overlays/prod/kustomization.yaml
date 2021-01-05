@@ -7,9 +7,6 @@ bases:
 
 namespace: first-attempt-prod
 
-patchesStrategicMerge:
-- database-secret.yaml
-
 images:
 - name: backend
   newName: mattedamo26/first-attempt

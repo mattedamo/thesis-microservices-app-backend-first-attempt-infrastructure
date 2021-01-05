@@ -2,12 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  labels: 
+    app: thesis-app
+    tier: frontend
 spec:
   selector:
     matchLabels:
       app: thesis-app
       tier: frontend
-  replicas: 1
   template:
     metadata:
       labels:
