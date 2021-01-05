@@ -13,6 +13,7 @@ spec:
       labels:
         app: mariadb
     spec:
+      hostname: mariadb
       containers:
         - image: mariadb:latest
           name: mariadb
