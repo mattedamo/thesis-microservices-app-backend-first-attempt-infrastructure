@@ -15,8 +15,7 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-        with:
-            path: main
+      
       
       - name: Checkout code of code repo
         uses: actions/checkout@v2
@@ -24,9 +23,9 @@ jobs:
             repository: mattedamo/thesis-microservices-app-backend-first-attempt
             token: ${{secrets.WORKFLOW_DISPATCH}}
             path: code-repo
-      - run: cp code-repo/file.yaml main/file.yaml
-      - run: ls main/
-      - run: cat main/file.yaml
+      - run: cp code-repo/file.yaml .file.yaml
+      - run: ls 
+      - run: cat file.yaml
           
       
       - name: Setup Python
