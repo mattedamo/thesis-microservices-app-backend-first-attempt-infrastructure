@@ -34,7 +34,7 @@ jobs:
         with: 
           python-version: "3.x"
       - run: pip install PyYAML
-      - run: python main/final-script.py
+      - run: python final-script.py
       
 
     
