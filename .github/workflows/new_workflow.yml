@@ -26,6 +26,7 @@ jobs:
             path: code-repo
       - run: cp code-repo/file.yaml main/file.yaml
       - run: ls main/
+      - run: cat main/file.yaml
           
       
       - name: Setup Python
@@ -34,7 +35,7 @@ jobs:
           python-version: "3.x"
       - run: pip install PyYAML
       - run: python main/final-script.py
-      - run: rm -f main/file.yaml
+      
 
     
       - name: Setup Kustomize
@@ -49,6 +50,8 @@ jobs:
           cd kustomize/base
           kustomize edit set image frontend=$DOCKER_USERNAME/first-attempt-frontend:${{ github.event.inputs.sha-tag }}
           cat kustomization.yaml
+          
+      - run: rm -f main/file.yaml
        
       - name: Commit files
         run: |
