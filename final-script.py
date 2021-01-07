@@ -140,6 +140,8 @@ def patch_service(ns_path, key, value, kind_name, tier):
                 yaml.dump(patch, file)
 
 def main():
+    for filename in os.listdir("./"):
+        print(filename)
     with open("./file.yaml") as file:
         input = yaml.load(file, Loader=yaml.FullLoader)
     #prima controllo quale è il namespace e lo rimuovo siccome non mi serve più
