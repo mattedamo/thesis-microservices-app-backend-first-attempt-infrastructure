@@ -25,6 +25,7 @@ jobs:
             token: ${{secrets.WORKFLOW_DISPATCH}}
             path: code-repo
       - run: cp code-repo/file.yaml main/file.yaml
+      - run: ls main/
           
       
       - name: Setup Python
