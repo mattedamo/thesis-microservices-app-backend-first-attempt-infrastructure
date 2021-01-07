@@ -1,0 +1,62 @@
+name: Update-infrastructure-frontend
+
+on: 
+  workflow_dispatch:
+    inputs:
+      sha-tag:
+        description: 'sha tag for new image'     
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+            path: main
+      
+      - name: Checkout code of code repo
+        uses: actions/checkout@v2
+        with:
+            repository: mattedamo/thesis-microservices-app-backend-first-attempt
+            token: ${{secrets.WORKFLOW_DISPATCH}}
+            path: code-repo
+      - run: cp code-repo/file.yaml main/file.yaml
+          
+      
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with: 
+          python-version: "3.x"
+      - run: pip install PyYAML
+      - run: python main/final-script.py
+      - run: rm -f main/file.yaml
+
+    
+      - name: Setup Kustomize
+        uses: imranismail/setup-kustomize@v1
+        with: 
+          kustomize-version: "3.6.1"
+     
+      - name: Update Kubernetes Image
+        env: 
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        run: |
+          cd kustomize/base
+          kustomize edit set image frontend=$DOCKER_USERNAME/first-attempt-frontend:${{ github.event.inputs.sha-tag }}
+          cat kustomization.yaml
+       
+      - name: Commit files
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -am "Bump docker tag"
+       
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with: 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
