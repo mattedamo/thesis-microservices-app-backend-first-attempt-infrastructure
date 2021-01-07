@@ -23,7 +23,7 @@ jobs:
             repository: mattedamo/thesis-microservices-app-backend-first-attempt
             token: ${{secrets.WORKFLOW_DISPATCH}}
             path: code-repo
-      - run: cp code-repo/file.yaml .file.yaml
+      - run: cp code-repo/file.yaml ./file.yaml
       - run: ls 
       - run: cat file.yaml
           
@@ -50,7 +50,7 @@ jobs:
           kustomize edit set image frontend=$DOCKER_USERNAME/first-attempt-frontend:${{ github.event.inputs.sha-tag }}
           cat kustomization.yaml
           
-      - run: rm -f main/file.yaml
+      - run: rm -f file.yaml
        
       - name: Commit files
         run: |
