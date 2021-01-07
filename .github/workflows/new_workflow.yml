@@ -24,9 +24,6 @@ jobs:
             token: ${{secrets.WORKFLOW_DISPATCH}}
             path: code-repo
       - run: cp code-repo/file.yaml ./file.yaml
-      - run: ls 
-      - run: cat file.yaml
-          
       
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -51,6 +48,7 @@ jobs:
           cat kustomization.yaml
           
       - run: rm -f file.yaml
+      - run: rm -rf code-repo/
        
       - name: Commit files
         run: |
